@@ -1,0 +1,17 @@
+{
+	"name": "FileLocation",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "FileServer",
+		"typeProperties": {
+			"host": "C:\\Users\\welcome\\OneDrive\\Documents\\CRM+Sales+Opportunities",
+			"userId": "DESKTOP-HP07Q56\\welcome",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJlNTJjMWEyNy1kZTEwLTRhODgtODY4Yy0wY2VhODMxMWU3ZWUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "onPremtoAzureIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

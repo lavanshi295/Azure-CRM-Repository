@@ -1,0 +1,15 @@
+{
+	"name": "CRM-ADF-workspace-90",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "0297b10f-7fdc-476b-83a8-0e41a8fda51f",
+		"tenantId": "2cb73684-80ab-4d93-a239-a8996364f8e6"
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"name": "onPremtoAzureIntegrationRuntime",
+	"properties": {
+		"type": "SelfHosted",
+		"typeProperties": {
+			"linkedInfo": {
+				"resourceId": "/subscriptions/1a061707-9b95-4508-88c0-a01935b299f3/resourcegroups/rg-banking-analytics-prod/providers/Microsoft.DataFactory/factories/OA-adf-workspace-990/integrationruntimes/onprem-integrationRuntime",
+				"authorizationType": "Rbac"
+			}
+		}
+	}
+}
