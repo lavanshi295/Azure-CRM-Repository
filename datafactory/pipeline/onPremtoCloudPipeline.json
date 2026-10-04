@@ -321,7 +321,7 @@
 				]
 			},
 			{
-				"name": "Succeeded",
+				"name": "Success",
 				"type": "WebActivity",
 				"dependsOn": [
 					{
@@ -349,7 +349,7 @@
 				}
 			},
 			{
-				"name": "Failed",
+				"name": "Fail",
 				"type": "WebActivity",
 				"dependsOn": [
 					{
