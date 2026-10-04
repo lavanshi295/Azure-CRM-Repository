@@ -1,0 +1,84 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "CRM-ADF-workspace-90"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"FileLocation_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'FileLocation'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://crmdatalake890.dfs.core.windows.net/"
+		},
+		"FileLocation_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "C:\\Users\\welcome\\OneDrive\\Documents\\CRM+Sales+Opportunities"
+		},
+		"FileLocation_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "DESKTOP-HP07Q56\\welcome"
+		},
+		"onPremtoAzureIntegrationRuntime_properties_typeProperties_linkedInfo_resourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/1a061707-9b95-4508-88c0-a01935b299f3/resourcegroups/rg-banking-analytics-prod/providers/Microsoft.DataFactory/factories/OA-adf-workspace-990/integrationruntimes/onprem-integrationRuntime"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "CRM-ADF-workspace-90_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"FileLocation_password": {
+						"value": "[parameters('FileLocation_password')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"onPremtoAzureIntegrationRuntime_properties_typeProperties_linkedInfo_resourceId": {
+						"value": "[parameters('onPremtoAzureIntegrationRuntime_properties_typeProperties_linkedInfo_resourceId')]"
+					},
+					"FileLocation_properties_typeProperties_host": {
+						"value": "[parameters('FileLocation_properties_typeProperties_host')]"
+					},
+					"FileLocation_properties_typeProperties_userId": {
+						"value": "[parameters('FileLocation_properties_typeProperties_userId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

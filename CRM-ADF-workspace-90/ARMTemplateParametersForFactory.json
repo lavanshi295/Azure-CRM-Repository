@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "CRM-ADF-workspace-90"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"FileLocation_password": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://crmdatalake890.dfs.core.windows.net/"
+		},
+		"FileLocation_properties_typeProperties_host": {
+			"value": "C:\\Users\\welcome\\OneDrive\\Documents\\CRM+Sales+Opportunities"
+		},
+		"FileLocation_properties_typeProperties_userId": {
+			"value": "DESKTOP-HP07Q56\\welcome"
+		},
+		"onPremtoAzureIntegrationRuntime_properties_typeProperties_linkedInfo_resourceId": {
+			"value": "/subscriptions/1a061707-9b95-4508-88c0-a01935b299f3/resourcegroups/rg-banking-analytics-prod/providers/Microsoft.DataFactory/factories/OA-adf-workspace-990/integrationruntimes/onprem-integrationRuntime"
+		}
+	}
+}
