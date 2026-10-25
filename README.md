@@ -53,24 +53,22 @@ The project uses a CRM sales opportunities dataset made up of five tables:
 | `sales_teams.csv` | Sales agents, managers and regional offices |
 | `data_dictionary.csv` | Column definitions for the dataset |
 
-> The full dataset is not included in this repository. A small sample is available in `data/sample/`. Original dataset source: *add link here*.
-
 ---
 
 ## Pipeline Walkthrough
 
-### Step 2 - Ingestion with Azure Data Factory
+### Step 1 - Ingestion with Azure Data Factory
 
 - A **Self-Hosted Integration Runtime** is installed on the machine hosting SQL Server, so ADF can reach on-premises data without exposing the database publicly.
 - A **Copy Data** activity moves each table from SQL Server into the `raw-data` container of ADLS Gen2.
 - Linked service credentials are stored in **Azure Key Vault**.
 - The ADF workspace is connected to **GitHub** for version control.
 
-### Step 3 - Raw Storage in ADLS Gen2
+### Step 2 - Raw Storage in ADLS Gen2
 
 - `raw-data` holds an untouched copy of the source data, kept for reprocessing and auditing.
 
-### Step 4 - Transformation with Azure Databricks
+### Step 3 - Transformation with Azure Databricks
 
 Notebooks read directly from ADLS using the `abfss://` protocol, with credentials pulled from Key Vault through a secret scope:
 
@@ -97,7 +95,7 @@ Transformations applied (edit to match your notebook):
 - [ ] Joins across accounts, products, pipeline and sales teams
 - [ ] Output written to the `transformed-data` container
 
-### Step 5 - Curated Storage in ADLS Gen2
+### Step 4 - Curated Storage in ADLS Gen2
 
 - `transformed-data` holds the cleaned, analytics-ready output from Databricks.
 
@@ -114,7 +112,7 @@ Transformations applied (edit to match your notebook):
 
 ## Monitoring and Alerts
 
-### Steps 6 and 7 - Logic App and Email Notification
+### Steps 5 and 6 - Logic App and Email Notification
 
 A Logic App is called from the ADF pipeline on success and on failure, and sends an email so issues are caught without manually checking the portal.
 
